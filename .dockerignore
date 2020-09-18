@@ -1,0 +1,5 @@
+employee-management-system/node_modules
+employee-management-system/npm-debug.log
+employee-management-system/dist
+# Cache used by TypeScript's incremental build
+employee-management-system/*.tsbuildinfo
