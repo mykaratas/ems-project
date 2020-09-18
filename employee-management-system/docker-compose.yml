@@ -1,0 +1,26 @@
+version: '3'
+services:
+  node_backend_12:
+    container_name: node_backend_12
+    build: .
+    depends_on:
+      - pg
+    ports:
+      - '3000:3000'
+    volumes:
+      - './src:/home/node/app/src'
+#    command: npm start
+#    restart: always
+#    stdin_open: true
+
+  pg:
+    image: 'postgres:12'
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: postgres
+      POSTGRES_DB: employee_main_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - '../ems_pg_data/db_data:/var/lib/postgresql/data'
